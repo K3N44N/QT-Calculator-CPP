@@ -25,5 +25,6 @@ private slots:
     void ChangeSign();
     void AllClear();
     void ClearDisp();
+    void BackspacePressed();
 };
 #endif // CALCULATOR_H

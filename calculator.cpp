@@ -42,6 +42,7 @@ Calculator::Calculator(QWidget *parent)
     connect(ui->SignButton, SIGNAL(released()), SLOT(ChangeSign()));
     connect(ui->CeButton, SIGNAL(released()), SLOT(AllClear()));
     connect(ui->CButton, SIGNAL(released()), SLOT(ClearDisp()));
+    connect(ui->BackspaceButton, SIGNAL(released()), SLOT(BackspacePressed()));
 
 }
 
@@ -120,4 +121,10 @@ void Calculator::AllClear(){
 
 void Calculator::ClearDisp(){
     ui->Display->setText("0");
+}
+
+void Calculator::BackspacePressed(){
+    QString val = ui->Display->text();
+    val.chop(1);
+    ui->Display->setText(val);
 }
