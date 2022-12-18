@@ -105,7 +105,7 @@ void Calculator::EqualButton() {
 
 void Calculator::ChangeSign() {
     QString displayVal = ui->Display->text();
-    QRegularExpression reg("[-]?[0-9.]*"); //regex magic
+    static QRegularExpression reg("[-]?[0-9.]*"); //regex magic
     QRegularExpressionMatch match = reg.match(displayVal);
     if(match.hasMatch()){
         double dblDisplayVal = displayVal.toDouble();
